@@ -77,7 +77,7 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
     return user
 
 # --- FastAPI App & Endpoints ---
-app = FastAPI(title="Vectorial AI Auth Service - DynamoDB", root_path=root_path)
+app = FastAPI(title="Authentication Service", root_path=root_path)
 
 @app.post("/auth/register", response_model=UserResponse, status_code=status.HTTP_201_CREATED, tags=["Auth"])
 def register_user(user: UserCreate):
