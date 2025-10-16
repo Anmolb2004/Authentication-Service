@@ -1,0 +1,6 @@
+fastapi[all]
+passlib==1.7.4
+bcrypt==3.2.0
+python-jose[cryptography]
+boto3
+mangum
