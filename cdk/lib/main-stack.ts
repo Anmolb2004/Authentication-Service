@@ -32,6 +32,9 @@ export class MainStack extends cdk.Stack {
       environment: {
         TABLE_NAME: table.tableName,
         JWT_SECRET_KEY: jwtSecret.secretValueFromJson('key').unsafeUnwrap(),
+        // ===== FIX START: Hardcode the stage name to break the cycle =====
+        API_GATEWAY_STAGE: 'prod',
+        // ===== FIX END =====
       },
       timeout: cdk.Duration.seconds(30),
     });
